@@ -110,7 +110,7 @@ export const fetchGithubProfile = async (username = GITHUB_USERNAME) => {
 };
 
 // ─── Fetch All Repos ──────────────────────────────────────────
-export const fetchGithubRepos = async (username = GITHUB_USERNAME) => {
+export const fetchGithubRepos = async (username = GITHUB_USERNAME, customThumbnails = {}) => {
   try {
     const { data } = await githubAxios.get(
       `/users/${username}/repos?per_page=100&sort=updated&type=owner`
@@ -168,7 +168,11 @@ export const fetchGithubRepos = async (username = GITHUB_USERNAME) => {
         defaultBranch: repo.default_branch,
         isArchived: repo.archived,
         category: categorizeRepo(repo),
-        thumbnail: getCategoryThumbnail(categorizeRepo(repo), repo.language),
+        thumbnail:
+          (customThumbnails && (customThumbnails[repo.name] || customThumbnails[repo.name.toLowerCase()])) ||
+          (demoUrl
+            ? `https://api.microlink.io?url=${encodeURIComponent(demoUrl)}&screenshot=true&meta=false&embed=screenshot.url`
+            : `https://opengraph.githubassets.com/1/${ownerLogin}/${repo.name}`),
       };
     });
   } catch (error) {
@@ -247,7 +251,7 @@ export const fetchGithubStats = async (username = GITHUB_USERNAME) => {
 };
 
 // ─── Thumbnail berdasarkan Kategori ──────────────────────────
-const getCategoryThumbnail = (category, language) => {
+export const getCategoryThumbnail = (category, language) => {
   const thumbnails = {
     "Web Development": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&q=80&w=600&h=400",
     "AI": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=600&h=400",

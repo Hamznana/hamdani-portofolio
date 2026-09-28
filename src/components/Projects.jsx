@@ -48,7 +48,7 @@ const Projects = () => {
       setLoading(true);
       setError(null);
       try {
-        const data = await fetchGithubRepos(config.githubUsername);
+        const data = await fetchGithubRepos(config.githubUsername, config.projectThumbnails);
         setRepos(data);
       } catch {
         setError("Gagal memuat project dari GitHub.");
@@ -58,7 +58,7 @@ const Projects = () => {
       }
     };
     load();
-  }, [config.githubUsername]);
+  }, [config.githubUsername, config.projectThumbnails]);
 
   const liveReposCount = repos.filter((r) => r.demoUrl).length;
 
@@ -209,7 +209,14 @@ const Projects = () => {
                     <img
                       src={repo.thumbnail}
                       alt={repo.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-70 group-hover:opacity-90"
+                      loading="lazy"
+                      onError={(e) => {
+                        const fallback = `https://opengraph.githubassets.com/1/${config.githubUsername}/${repo.name}`;
+                        if (e.target.src !== fallback) {
+                          e.target.src = fallback;
+                        }
+                      }}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                     />
                     {/* Category Badge */}
                     <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-${catColor}-600/80 text-[10px] font-bold uppercase text-white backdrop-blur-sm`}>

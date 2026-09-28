@@ -105,6 +105,15 @@ const initialConfig = {
     },
   ],
 
+  // Pemetaan Foto / Screenshot Project Asli (Opsional)
+  // Masukkan nama repo dan path gambar (lokal di folder public/projects/ atau URL luar)
+  // Contoh: "Noir-Coffee": "/projects/noir-coffee.png"
+  // Jika kosong/tidak diisi, sistem otomatis menampilkan kartu preview resmi GitHub repo tersebut!
+  projectThumbnails: {
+    // "Noir-Coffee": "/projects/noir-coffee.png",
+    // "sakuin": "/projects/sakuin.png",
+  },
+
   // Testimonials: diambil dari Supabase saat runtime
   testimonials: [],
 };
