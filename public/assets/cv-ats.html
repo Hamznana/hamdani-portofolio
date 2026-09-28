@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Hamdani Hamka - ATS Friendly Resume</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.4;
+      font-size: 9.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px 16px;
+    }
+
+    /* Web Action Bar */
+    .action-bar {
+      background: #111827;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-family: sans-serif;
+    }
+    .action-bar button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-bar button:hover {
+      background: #1d4ed8;
+    }
+    @media print {
+      .action-bar {
+        display: none !important;
+      }
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #111827;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 18pt;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      color: #000000;
+    }
+    .header .title {
+      font-size: 10.5pt;
+      font-weight: bold;
+      color: #374151;
+      margin-bottom: 5px;
+    }
+    .header .contact-info {
+      font-size: 8.5pt;
+      color: #4b5563;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .header .contact-info a {
+      color: #111827;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #9ca3af;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      color: #000000;
+    }
+
+    /* Content Elements */
+    p {
+      text-align: justify;
+      margin-bottom: 4px;
+      font-size: 9pt;
+      color: #1f2937;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 3px 8px;
+      font-size: 9pt;
+    }
+    .skill-label {
+      font-weight: bold;
+      color: #111827;
+    }
+    .skill-values {
+      color: #374151;
+    }
+
+    .item {
+      margin-bottom: 8px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5pt;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 1px;
+    }
+    .item-sub {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #4b5563;
+      margin-bottom: 3px;
+    }
+    ul {
+      margin-left: 18px;
+      margin-bottom: 4px;
+      font-size: 8.5pt;
+      color: #374151;
+    }
+    li {
+      margin-bottom: 1.5px;
+      line-height: 1.35;
+    }
+    .link-text {
+      font-size: 8pt;
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Web Action Bar -->
+  <div class="action-bar">
+    <div>
+      <strong>Curriculum Vitae: Hamdani Hamka</strong> (ATS-Friendly Edition)
+    </div>
+    <button onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+      Cetak / Simpan PDF
+    </button>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>HAMDANI HAMKA</h1>
+      <div class="title">Web Developer · Bot Developer · IT Support Specialist</div>
+      <div class="contact-info">
+        <span>Duri, Riau, Indonesia</span>
+        <span>•</span>
+        <span>+62 821-7208-5318</span>
+        <span>•</span>
+        <span><a href="mailto:hamdaniamka@gmail.com">hamdaniamka@gmail.com</a></span>
+        <span>•</span>
+        <span><a href="https://github.com/Hamznana" target="_blank">github.com/Hamznana</a></span>
+        <span>•</span>
+        <span><a href="https://hamdani.vercel.app" target="_blank">hamdani.vercel.app</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        Solution-focused Web Developer and IT Support Specialist with hands-on enterprise internship experience at PT. BDSI (Bohai Drilling Service Indonesia) and a certified <strong>Junior Web Developer</strong> credential. Demonstrates solid competency in hardware troubleshooting, network maintenance, client-side React/JavaScript development, and Python bot automation. Authored and deployed 17+ public GitHub repositories with automated CI/CD via GitHub Pages and Vercel.
+      </p>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <!-- PT. BDSI -->
+      <div class="item">
+        <div class="item-header">
+          <span>PT. BDSI (Bohai Drilling Service Indonesia)</span>
+          <span>Duri, Riau, Indonesia</span>
+        </div>
+        <div class="item-sub">
+          <span>IT Support Intern</span>
+          <span>Internship Period</span>
+        </div>
+        <ul>
+          <li>Delivered day-to-day IT technical support for corporate personnel, resolving hardware, operating system, and software incidents with minimal downtime.</li>
+          <li>Conducted systematic diagnostics and repairs on company laptops, desktop workstations, and peripheral equipment.</li>
+          <li>Configured, installed, and maintained local network printers, ensuring seamless multi-user document workflows.</li>
+          <li>Monitored and maintained local area network (LAN) and wireless (WLAN) connectivity, ensuring stable and reliable office communications.</li>
+        </ul>
+      </div>
+
+      <!-- Independent -->
+      <div class="item">
+        <div class="item-header">
+          <span>Independent Web &amp; Bot Developer</span>
+          <span>Duri, Riau, Indonesia</span>
+        </div>
+        <div class="item-sub">
+          <span>Open Source Creator &amp; Freelance Developer</span>
+          <span>2023 - Present</span>
+        </div>
+        <ul>
+          <li>Engineered and launched responsive web applications using React.js, JavaScript (ES6+), and Tailwind CSS.</li>
+          <li>Developed custom Telegram automation bots using Python and Node.js for automated customer inquiry routing and notifications.</li>
+          <li>Managed automated deployment pipelines directly through GitHub Pages and Vercel cloud hosting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Projects -->
+    <section class="section">
+      <h2 class="section-title">Selected Technical Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="item">
+        <div class="item-header">
+          <span>Hamnime - Anime Discovery &amp; Streaming Web Application</span>
+          <span>Live Deployment</span>
+        </div>
+        <div class="item-sub">
+          <span>Tech: JavaScript, HTML5, CSS3, REST API, GitHub Pages</span>
+          <span><a class="link-text" href="https://hamznana.github.io/Hamnime/">hamznana.github.io/Hamnime</a></span>
+        </div>
+        <ul>
+          <li>Built a high-performance web platform featuring live search indexing, genre filtering, and dynamic content rendering.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="item">
+        <div class="item-header">
+          <span>VORTEX-FUTSAL - Arena Reservation &amp; Schedule Management</span>
+          <span>Live Deployment</span>
+        </div>
+        <div class="item-sub">
+          <span>Tech: JavaScript, Vite, Responsive UI, GitHub Pages</span>
+          <span><a class="link-text" href="https://hamznana.github.io/VORTEX-FUTSAL/">hamznana.github.io/VORTEX-FUTSAL</a></span>
+        </div>
+        <ul>
+          <li>Engineered an intuitive booking portal with interactive court schedule visualization and real-time validation.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="item">
+        <div class="item-header">
+          <span>Noir-Coffee &amp; Telegram Bot Suite (Lucky-Bot-Tele, ubatob_bot)</span>
+          <span>Live Deployment</span>
+        </div>
+        <div class="item-sub">
+          <span>Tech: Python, Node.js, Telegram Bot API, Tailwind CSS</span>
+          <span><a class="link-text" href="https://github.com/Hamznana">github.com/Hamznana</a></span>
+        </div>
+        <ul>
+          <li>Created modular automation bots handling webhook event listening, scheduled message dispatches, and user query automation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-label">IT Support &amp; Network:</div>
+        <div class="skill-values">Hardware Troubleshooting, OS Installation &amp; Repair, Network Printer Configuration, LAN/WLAN Setup</div>
+
+        <div class="skill-label">Programming:</div>
+        <div class="skill-values">JavaScript (ES6+), TypeScript, Python, HTML5, CSS3, SQL</div>
+
+        <div class="skill-label">Frameworks &amp; Web:</div>
+        <div class="skill-values">React.js, Node.js, Express.js, Tailwind CSS, Vite, RESTful API</div>
+
+        <div class="skill-label">Automation &amp; Cloud:</div>
+        <div class="skill-values">Telegram Bot API, Supabase, GitHub Pages, Vercel, Git &amp; GitHub</div>
+      </div>
+    </section>
+
+    <!-- Certifications & Training -->
+    <section class="section">
+      <h2 class="section-title">Certifications &amp; Training</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Junior Web Developer</span>
+          <span>Competency Certification</span>
+        </div>
+        <div class="item-sub">
+          <span>Web Application Development Competency Standards</span>
+          <span>Verified Skill</span>
+        </div>
+        <p>
+          Certified in web development fundamentals, responsive layout design, JavaScript programming, DOM event manipulation, and API integration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education &amp; Professional Development</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Software Engineering &amp; Information Technology</span>
+          <span>Continuous Learning</span>
+        </div>
+        <div class="item-sub">
+          <span>Independent Project-Based Development &amp; Industry Standards</span>
+          <span>Indonesia</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+      <h2 class="section-title">Languages</h2>
+      <p>
+        <strong>Indonesian:</strong> Native Speaker | <strong>English:</strong> Professional Working Proficiency (Technical documentation &amp; communication)
+      </p>
+    </section>
+  </div>
+
+</body>
+</html>

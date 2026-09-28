@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =====================================================
+   TAILWIND V4 THEME TOKENS
+   Note: @keyframes must be OUTSIDE @theme in v4
+   ===================================================== */
+@theme {
+  --font-sans: "Outfit", "Inter", sans-serif;
+
+  /* Custom Colors */
+  --color-darkBg: #030014;
+  --color-cardBg: rgba(255, 255, 255, 0.03);
+  --color-cardBorder: rgba(255, 255, 255, 0.08);
+
+  /* Custom Animations (references @keyframes defined below) */
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-fade-in: fadeIn 0.3s ease-out;
+}
+
+/* Keyframes MUST be at root level, NOT inside @theme */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.2); }
+  100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(236, 72, 153, 0.4); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =====================================================
+   BASE STYLES
+   ===================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030014;
+  color: #d1d5db;
+  font-family: "Outfit", "Inter", sans-serif;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body ::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: #ddd6fe;
+}
+
+/* =====================================================
+   CUSTOM SCROLLBAR
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 0, 20, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+
+/* =====================================================
+   GLASSMORPHISM UTILITIES
+   ===================================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-nav {
+  background: rgba(3, 0, 20, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 12px 30px -10px rgba(139, 92, 246, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+/* =====================================================
+   TEXT GRADIENT UTILITIES
+   ===================================================== */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #a78bfa, #f472b6, #22d3ee);
+}
+
+.text-gradient-purple {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #8b5cf6, #d946ef);
+}
+
+.text-gradient-cyan {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #22d3ee, #3b82f6);
+}
+
+/* =====================================================
+   ANIMATION UTILITIES (needed for Tailwind v4 custom)
+   ===================================================== */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* =====================================================
+   TYPING CURSOR
+   ===================================================== */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 0.8s infinite;
+}
+
+/* =====================================================
+   MISC
+   ===================================================== */
+.countup-wrapper {
+  display: inline-block;
+}
+
+/* =====================================================
+   EXPLICIT UTILITY FALLBACKS
+   (Safety net for Tailwind v4 @theme token classes)
+   ===================================================== */
+.bg-darkBg {
+  background-color: #030014;
+}
+
+.text-darkBg {
+  color: #030014;
+}
+

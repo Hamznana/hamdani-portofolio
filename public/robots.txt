@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /hh-admin
+Disallow: /admin
+Allow: /
+
+Sitemap: https://hamdani.vercel.app/sitemap.xml
